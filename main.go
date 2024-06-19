@@ -13,7 +13,7 @@ import (
 )
 
 var (
-	content    = pflag.StringP("content", "", "", "原始镜像，格式为：{ \"platform\": \"\", \"hub-mirror\": [] }")
+	content    = pflag.StringP("content", "", "", "原始镜像，格式为：{ \"platform\": \"\", \"origin-image\": [] }")
 	maxContent = pflag.IntP("maxContent", "", 11, "原始镜像个数限制")
 	repository = pflag.StringP("repository", "", "", "推送仓库地址，为空默认为 hub.docker.com")
 	username   = pflag.StringP("username", "", "", "仓库用户名")
@@ -26,7 +26,7 @@ func main() {
 
 	fmt.Println("验证原始镜像内容")
 	var hubMirrors struct {
-		Content  []string `json:"hub-mirror"`
+		Content  []string `json:"origin-image"`
 		Platform string   `json:"platform"`
 	}
 
