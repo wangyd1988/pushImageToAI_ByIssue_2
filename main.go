@@ -15,9 +15,9 @@ import (
 var (
 	content    = pflag.StringP("content", "", "", "原始镜像，格式为：{ \"platform\": \"\", \"origin-image\": [] }")
 	maxContent = pflag.IntP("maxContent", "", 11, "原始镜像个数限制")
-	repository = pflag.StringP("repository", "", "", "推送仓库地址，为空默认为 hub.docker.com")
-	username   = pflag.StringP("username", "", "", "仓库用户名")
-	password   = pflag.StringP("password", "", "", "仓库密码")
+	repository = pflag.StringP("repository", "", "registry.cn-hangzhou.aliyuncs.com", "推送仓库地址，为空默认为 hub.docker.com")
+	username   = pflag.StringP("username", "", "891837847@qq.com", "仓库用户名")
+	password   = pflag.StringP("password", "", "wyd,boy1988", "仓库密码")
 	namespace  = pflag.StringP("namespace", "", "testwydimage", "testwydimage")
 	outputPath = pflag.StringP("outputPath", "", "output.md", "结果输出路径")
 )
