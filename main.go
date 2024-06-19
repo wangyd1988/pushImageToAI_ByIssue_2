@@ -18,6 +18,7 @@ var (
 	repository = pflag.StringP("repository", "", "", "推送仓库地址，为空默认为 hub.docker.com")
 	username   = pflag.StringP("username", "", "", "仓库用户名")
 	password   = pflag.StringP("password", "", "", "仓库密码")
+	namespace  = pflag.StringP("password", "", "", "testwydimage")
 	outputPath = pflag.StringP("outputPath", "", "output.md", "结果输出路径")
 )
 
