@@ -12,6 +12,8 @@ jobs:
   mirror_transition:
     # 运行环境
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     # 运行条件 => issues 的 label 包含 origin-image
     # if: contains(github.event.issue.labels.*.name, 'origin-image')
     # 镜像转换任务的步骤列表
