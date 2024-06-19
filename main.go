@@ -66,7 +66,7 @@ fmt.Println("repository %+v",*repository)
 		go func() {
 			defer wg.Done()
 
-			output, err := cli.PullTagPushImage(context.Background(), source, hubMirrors.Platform)
+			output, err := cli.PullTagPushImage(context.Background(), source, *namespace, hubMirrors.Platform)
 			if err != nil {
 				fmt.Println(source, "转换异常: ", err)
 				return

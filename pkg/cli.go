@@ -63,7 +63,7 @@ type Output struct {
 	Target string
 }
 
-func (c *Cli) Source2Target(source string, platform string) (*Output, error) {
+func (c *Cli) Source2Target(source string, namespace, platform string) (*Output, error) {
 	if source == "" {
 		return nil, errors.New("source is nil")
 	}
@@ -93,7 +93,7 @@ func (c *Cli) Source2Target(source string, platform string) (*Output, error) {
 	if c.repository == "" {
 		target = "docker.io/" + c.username + "/" + strings.ReplaceAll(target, "/", ".")
 	} else {
-		target = c.repository + "/" + strings.ReplaceAll(target, "/", ".")
+		target = c.repository + "/" + namespace + "/" + strings.ReplaceAll(target, "/", ".")
 	}
 
 	return &Output{
@@ -102,8 +102,8 @@ func (c *Cli) Source2Target(source string, platform string) (*Output, error) {
 	}, nil
 }
 
-func (c *Cli) PullTagPushImage(ctx context.Context, source, platform string) (*Output, error) {
-	output, err := c.Source2Target(source, platform)
+func (c *Cli) PullTagPushImage(ctx context.Context, source, namesapce string, platform string) (*Output, error) {
+	output, err := c.Source2Target(source, namesapce, platform)
 	if err != nil {
 		return nil, err
 	}
