@@ -6,6 +6,7 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"strings"
 
@@ -104,6 +105,8 @@ func (c *Cli) Source2Target(source string, namespace, platform string) (*Output,
 
 func (c *Cli) PullTagPushImage(ctx context.Context, source, namesapce string, platform string) (*Output, error) {
 	output, err := c.Source2Target(source, namesapce, platform)
+
+	fmt.Println("原始镜像，%v+,目标镜像 %v+", output.Source,output.Target)
 	if err != nil {
 		return nil, err
 	}
