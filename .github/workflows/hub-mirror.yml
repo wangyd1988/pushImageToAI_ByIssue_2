@@ -27,7 +27,7 @@ jobs:
       
       # 3. 运行 go 代码
       - name: Run code
-        run: go run main.go --username=${{ secrets.ALIYUN_REGISTRY_USER }} --password=${{ secrets.ALIYUN_REGISTRY_PASSWORD }} --repository=${{ secrets.ALIYUN_REGISTRY }} --namspace=${{ secrets.ALIYUN_NAME_SPACE }}  --content='${{ github.event.issue.body }}' --maxContent=11 --outputPath=output.md
+        run: go run main.go --username=${{ secrets.ALIYUN_REGISTRY_USER }} --password=${{ secrets.ALIYUN_REGISTRY_PASSWORD }} --repository=${{ secrets.ALIYUN_REGISTRY }} --namespace=${{ secrets.ALIYUN_NAME_SPACE }}  --content='${{ github.event.issue.body }}' --maxContent=11 --outputPath=output.md
         # 4. 当成功输出 output.md 文件时，为 issues 添加评论
       - name: Add comment
         if: ${{ hashFiles('output.md') }}
