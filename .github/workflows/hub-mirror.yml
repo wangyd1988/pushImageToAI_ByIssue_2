@@ -12,8 +12,8 @@ jobs:
   mirror_transition:
     # 运行环境
     runs-on: ubuntu-latest
-    # 运行条件 => issues 的 label 包含 hub-mirror
-    if: contains(github.event.issue.labels.*.name, 'hub-mirror')
+    # 运行条件 => issues 的 label 包含 origin-image
+    if: contains(github.event.issue.labels.*.name, 'origin-image')
     # 镜像转换任务的步骤列表
     steps:
       # 1. 切换分支（默认主分支）
